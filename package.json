@@ -1,5 +1,5 @@
 {
-  "name": "react-useragent",
+  "name": "@quentin-sommer/react-useragent",
   "version": "1.0.0",
   "description": "react-useragent React component",
   "main": "lib/index.js",
@@ -32,11 +32,18 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
-  "author": "",
-  "homepage": "",
+  "author": {
+    "name": "Quentin Sommer",
+    "url": "http://quentin-sommer.com"
+  },
+  "homepage": "github.com/quentin-sommer/react-useragent",
   "license": "MIT",
-  "repository": "",
+  "repository": "github.com/quentin-sommer/react-useragent",
   "keywords": [
-    "react-component"
+    "react-component",
+    "useragent",
+    "react",
+    "UA",
+    "parser"
   ]
 }

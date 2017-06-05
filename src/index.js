@@ -1,4 +1,4 @@
-import Provider from './Provider'
+import UserAgentProvider from './Provider'
 import UserAgent from './UserAgent'
 
-export {Provider, UserAgent}
+export {UserAgentProvider, UserAgent}

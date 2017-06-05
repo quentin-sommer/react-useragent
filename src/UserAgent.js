@@ -1,14 +1,45 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import availableProps from './availableProps'
 
-const UserAgent = ({children}, {ua}) => {
-  if (typeof children === 'function') {
-    return children(ua)
+const UserAgent = ({children, returnfullParser, ...props}, {ua}) => {
+  const validProps = Object.keys(props).filter(prop =>
+    availableProps.includes(prop)
+  )
+  const ret = validProps.some(prop => ua.uaResults[prop])
+  const funcChildren = typeof children === 'function'
+
+  if (validProps.length !== 0) {
+    if (funcChildren) {
+      return children(ret)
+    }
+    if (ret) {
+      return children
+    }
+    return null
   }
+  if (typeof children === 'function') {
+    if (returnfullParser) {
+      return children(ua.parser)
+    }
+    return children(ua.uaResults)
+  }
+
   if (process.env.NODE_ENV !== 'production') {
-    throw new Error('UserAgent should be used with a function as child')
+    throw new Error(
+      'UserAgent should be used with a function as a child when used without any props'
+    )
   }
   return null
+}
+
+UserAgent.propTypes = {
+  ...availableProps.reduce((acc, cur) => ({...acc, [cur]: PropTypes.bool}), {}),
+  returnfullParser: PropTypes.bool,
+}
+
+UserAgent.defaultProps = {
+  returnfullParser: false,
 }
 
 UserAgent.contextTypes = {
