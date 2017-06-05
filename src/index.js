@@ -1,9 +1,4 @@
-import React, {Component} from 'react'
+import Provider from './Provider'
+import UserAgent from './UserAgent'
 
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-}
+export {Provider, UserAgent}
