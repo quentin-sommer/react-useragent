@@ -48,6 +48,10 @@ const App = (props) => (
 
 Then use the `<UserAgent>` component.
 
+
+react-useragent expose some props, these are optimized and will be faster than directly accessing the `UAParser.js` library.
+
+
 Available props for `<UserAgent>`
 * computer
 * windows
@@ -57,7 +61,7 @@ Available props for `<UserAgent>`
 * android
 * ios 
 
-Theses props are cumulable : `<UserAgent mobile linux>` will match Linux **and** mobile systems.
+Theses props are cumulable : `<UserAgent mobile linux>` will match both Linux **and** mobile systems.
 
 ``` js
 import {UserAgentProvider, UserAgent} from '@quentin-sommer/react-useragent'
