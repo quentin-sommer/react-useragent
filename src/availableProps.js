@@ -6,6 +6,10 @@ const availableProps = [
   'mobile',
   'android',
   'ios',
+  'firefox',
+  'chrome',
+  'edge',
+  'safari',
 ]
 
 export default availableProps

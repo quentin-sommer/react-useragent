@@ -60,8 +60,12 @@ Available props for `<UserAgent>`
 * mobile
 * android
 * ios 
+* firefox
+* chrome
+* edge
+* safari
 
-Theses props are cumulable : `<UserAgent mobile linux>` will match both Linux **and** mobile systems.
+Theses props are cumulable : `<UserAgent firefox mobile>` will match both firefox browser **and** mobile systems.
 
 ``` js
 import {UserAgentProvider, UserAgent} from '@quentin-sommer/react-useragent'

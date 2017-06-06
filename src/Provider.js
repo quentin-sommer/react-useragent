@@ -13,6 +13,10 @@ const uaResults = {
   mac: false,
   linux: false,
   computer: false,
+  firefox: false,
+  chrome: false,
+  edge: false,
+  safari: false,
 }
 
 class UAProvider extends React.Component {
@@ -35,6 +39,11 @@ class UAProvider extends React.Component {
       uaResults.mac ||
       uaResults.linux ||
       uaParser.getDevice().type === undefined
+
+    uaResults.firefox = uaParser.getBrowser().name === 'Firefox'
+    uaResults.chrome = uaParser.getBrowser().name === 'Chrome'
+    uaResults.edge = uaParser.getBrowser().name === 'Edge'
+    uaResults.safari = uaParser.getBrowser().name === 'Safari'
   }
 
   getChildContext() {
