@@ -22,7 +22,20 @@ Integrate user-agent detection in an idiomatic React way
 
 ## Introduction
 
-react-useragent wraps the great [UAParser.js](https://github.com/faisalman/ua-parser-js) library and make it easy to use inside React applications.
+Imagine being able to render magnificent, deep links, beautiful download buttons for your app. Well, Now you can
+
+``` js
+<div>
+  <UserAgent ios>
+    <BeautifulIOSButton/>
+  </UserAgent>
+  <UserAgent windows>
+   <BeautifulIWindowsButton/>
+  </UserAgent>
+</div>
+```
+
+react-useragent wraps the great [UAParser.js](https://github.com/faisalman/ua-parser-js) library and make it easy to use useragent knowledge inside your React applications.
 react-useragent provides useful shortcuts but you can always use an escape hatch in case you want to access the underlying library
 
 ## Usage
