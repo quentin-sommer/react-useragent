@@ -44,7 +44,8 @@ const App = (props) => (
     </UserAgentProvider>
 )
 
-``
+```
+
 Then use the `<UserAgent>`.
 
 Available props for `<UserAgent>`
