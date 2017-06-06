@@ -46,7 +46,7 @@ const App = (props) => (
 
 ```
 
-Then use the `<UserAgent> component`.
+Then use the `<UserAgent>` component.
 
 Available props for `<UserAgent>`
 * computer
