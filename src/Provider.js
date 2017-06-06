@@ -34,7 +34,7 @@ class UAProvider extends React.Component {
       uaResults.windows ||
       uaResults.mac ||
       uaResults.linux ||
-      uaParser.getDevice().type === 'undefined'
+      uaParser.getDevice().type === undefined
   }
 
   getChildContext() {
