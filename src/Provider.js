@@ -51,9 +51,11 @@ class UAProvider extends React.Component {
   }
 }
 
-UAProvider.propTypes = {
-  ua: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+if (process.env.NODE_ENV !== 'production') {
+  UAProvider.propTypes = {
+    ua: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired,
+  }
 }
 
 UAProvider.childContextTypes = {

@@ -33,9 +33,14 @@ const UserAgent = ({children, returnfullParser, ...props}, {ua}) => {
   return null
 }
 
-UserAgent.propTypes = {
-  ...availableProps.reduce((acc, cur) => ({...acc, [cur]: PropTypes.bool}), {}),
-  returnfullParser: PropTypes.bool,
+if (process.env.NODE_ENV !== 'production') {
+  UserAgent.propTypes = {
+    ...availableProps.reduce(
+      (acc, cur) => ({...acc, [cur]: PropTypes.bool}),
+      {}
+    ),
+    returnfullParser: PropTypes.bool,
+  }
 }
 
 UserAgent.defaultProps = {
