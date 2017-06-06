@@ -31,7 +31,7 @@ class UAProvider extends React.Component {
     uaResults.mac = uaParser.getOS().name === 'Mac OS'
     uaResults.linux = uaParser.getOS().name === 'Linux'
     uaResults.computer =
-      uaResults.window ||
+      uaResults.windows ||
       uaResults.mac ||
       uaResults.linux ||
       uaParser.getDevice().type === 'undefined'
