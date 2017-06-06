@@ -14,7 +14,7 @@
 [coveralls]: https://coveralls.io/github/quentin-sommer/react-useragent
 -->
 
-Enable user agent parsing easily into your react apps
+Integrate user-agent detection in an idiomatic React way
 
 ## Installation
 
@@ -22,14 +22,16 @@ Enable user agent parsing easily into your react apps
 
 ## Introduction
 
-react-useragent wraps the great [UAParser.js](https://github.com/faisalman/ua-parser-js) library to make it easy to use inside React applications.
+react-useragent wraps the great [UAParser.js](https://github.com/faisalman/ua-parser-js) library and make it easy to use inside React applications.
 react-useragent provides useful shortcuts but you can always use an escape hatch in case you want to access the underlying library
 
 ## Usage
 
-react-useragent make us of context to pass its parsing results to components, so you need to wrap your App in a `<UserAgentProvider>` tag.
-You also need to pass it a user agent string. On the browser that would be `window.navigator.userAgent`.
-react-useragent works in server side rendering as well, just pass it the request useragent string. On express that would be `req.headers['user-agent']`
+First you need to wrap your App in a `<UserAgentProvider>` tag.
+You also need to pass a user agent string to `<UserAgentProvider>`. 
+On the browser that would be `window.navigator.userAgent`.
+
+react-useragent works in **server side rendering** as well, just pass it the request useragent string. On express that would be `req.headers['user-agent']`
 
 ``` js
 import {UserAgentProvider} from '@quentin-sommer/react-useragent'
@@ -37,12 +39,14 @@ import {UserAgentProvider} from '@quentin-sommer/react-useragent'
 const App = (props) => (
     <UserAgentProvider ua={window.navigator.userAgent}>
         <div>
-        {/* App */}
+        {/* rest of your App */}
         </div>
     </UserAgentProvider>
 )
 
-```
+``
+Then use the `<UserAgent>`.
+
 Available props for `<UserAgent>`
 * computer
 * windows
@@ -52,7 +56,7 @@ Available props for `<UserAgent>`
 * android
 * ios 
 
-Theses props are cumulable : `<UserAgent mobile linux>` will match Linux and mobile systems.
+Theses props are cumulable : `<UserAgent mobile linux>` will match Linux **and** mobile systems.
 
 ``` js
 import {UserAgentProvider, UserAgent} from '@quentin-sommer/react-useragent'
@@ -61,7 +65,7 @@ const App = (props) => (
     <UserAgentProvider ua={window.navigator.userAgent}>
         <div>
           <UserAgent mobile>
-            <p>This will only be render on mobile</p>
+            <p>This will only be rendered on mobile</p>
           </UserAgent>
         </div>
     </UserAgentProvider>
@@ -72,7 +76,7 @@ You can also use this alternative API if you find it more convenient
 ``` js
 <UserAgent mobile>
     {uaIsMobile => (
-        {uaIsMobile && <p>This will ONLY be render on mobile</p>}
+        {uaIsMobile && <p>This will ONLY be rendered on mobile</p>}
         {!uaIsMobile && <p>This will NOT be rendered on mobile</p>}
     )}
 </UserAgent>
@@ -87,4 +91,4 @@ For full power you can always access the underlying parser with the `returnFullP
 </UserAgent>
 ```
 
-For more example see the demo app [here](https://github.com/quentin-sommer/react-useragent/blob/master/demo/src/index.js)
+For more example see the demo app source [here](https://github.com/quentin-sommer/react-useragent/blob/master/demo/src/index.js)
