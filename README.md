@@ -38,6 +38,8 @@ Imagine being able to render magnificent, deep links, beautiful download buttons
 react-useragent wraps the great [UAParser.js](https://github.com/faisalman/ua-parser-js) library and make it easy to use useragent knowledge inside your React applications.
 react-useragent provides useful shortcuts but you can always use an escape hatch in case you want to access the underlying library
 
+[live demo](https://quentin-sommer.github.io/react-useragent/)
+
 ## Usage
 
 First you need to wrap your App in a `<UserAgentProvider>` tag.
