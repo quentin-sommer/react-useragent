@@ -21,7 +21,8 @@ class Demo extends Component {
             </p>
             <p>
               All of the following titles render conditionally depending of your
-              user-agent, try visiting with another browser !
+              user-agent, try visiting with another browser or using the chrome
+              dev tools device emulator !
             </p>
             <p>
               With this library you can for example render a custom download
