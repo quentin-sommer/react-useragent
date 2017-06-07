@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {render} from 'react-dom'
 
 import {UserAgentProvider, UserAgent} from '../../src'
+import AndroidButton from './AndroidButton'
+import IOSButton from './IOSButton'
 
 class Demo extends Component {
   render() {
@@ -9,6 +11,48 @@ class Demo extends Component {
       <div>
         <UserAgentProvider ua={window.navigator.userAgent}>
           <div>
+            <h1>react-useragent</h1>
+            <p>
+              view the source code
+              {' '}
+              <a href="https://github.com/quentin-sommer/react-useragent/blob/master/demo/src/index.js">
+                here
+              </a>
+            </p>
+            <p>
+              All of the following titles render conditionally depending of your
+              user-agent, try visiting with another browser !
+            </p>
+            <p>
+              With this library you can for example render a custom download
+              button for iOS and android, and show both on the web
+            </p>
+            <UserAgent android>
+              <div>
+                <p>
+                  You seem to be on an android device...
+                </p>
+                <AndroidButton />
+              </div>
+            </UserAgent>
+            <UserAgent ios>
+              <div>
+                <p>
+                  You seem to be on an ios device...
+                </p>
+                <IOSButton />
+              </div>
+            </UserAgent>
+            <UserAgent computer>
+              <div>
+                <p>
+                  You seem to be on a computer, so here are all my buttons:
+                  {' '}
+                </p>
+                <AndroidButton />
+                <IOSButton />
+              </div>
+            </UserAgent>
             {/* You can match each of these user agents */}
             <UserAgent mobile>
               <h1>Hello from a mobile</h1>
@@ -39,7 +83,7 @@ class Demo extends Component {
             <UserAgent returnfullParser>
               {parser =>
                 <h1>
-                  I see you, {parser.getOS().name}
+                  I see you... {parser.getOS().name}
                   {' '}{parser.getCPU().architecture}
                   {/*
                   {console.log(parser)}
