@@ -116,3 +116,5 @@ For full power you can always access the underlying parser with the `returnFullP
 ```
 
 For more example see the demo app source [here](https://github.com/quentin-sommer/react-useragent/blob/master/demo/src/index.js)
+
+If you have any questions don't hesitate to say hi on [Twitter](https://twitter.com/quentin_smr)
