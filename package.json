@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
-    "nwb": "0.16.x",
+    "nwb": "^0.17.1",
     "prettier": "^1.4.2",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
