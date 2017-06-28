@@ -18,7 +18,7 @@ const UserAgent = ({children, returnfullParser, ...props}, {ua}) => {
     }
     return null
   }
-  if (typeof children === 'function') {
+  if (funcChildren) {
     if (returnfullParser) {
       return children(ua.parser)
     }
