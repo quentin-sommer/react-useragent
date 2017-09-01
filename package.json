@@ -1,6 +1,6 @@
 {
   "name": "@quentin-sommer/react-useragent",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "react-useragent React component",
   "main": "lib/index.js",
   "module": "es/index.js",
