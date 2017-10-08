@@ -4,6 +4,7 @@ const availableProps = [
   'linux',
   'mac',
   'mobile',
+  'tablet',
   'android',
   'ios',
   'firefox',

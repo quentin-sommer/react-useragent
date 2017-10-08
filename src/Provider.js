@@ -9,6 +9,7 @@ const uaResults = {
   android: false,
   ios: false,
   mobile: false,
+  tablet: false,
   windows: false,
   mac: false,
   linux: false,
@@ -30,6 +31,8 @@ class UAProvider extends React.Component {
       uaResults.android ||
       uaResults.ios ||
       uaParser.getDevice().type === 'mobile'
+
+    uaResults.tablet = uaParser.getDevice().type === 'tablet'
 
     uaResults.windows = uaParser.getOS().name === 'Windows'
     uaResults.mac = uaParser.getOS().name === 'Mac OS'

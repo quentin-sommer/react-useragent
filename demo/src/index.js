@@ -71,7 +71,7 @@ class Demo extends Component {
             <UserAgent android>
               <div>
                 <p>
-                  You seem to be on an android device...
+                You seem to be on an android device...
                 </p>
                 <AndroidButton />
               </div>
@@ -79,7 +79,7 @@ class Demo extends Component {
             <UserAgent ios>
               <div>
                 <p>
-                  You seem to be on an ios device...
+                You seem to be on an ios device...
                 </p>
                 <IOSButton />
               </div>
@@ -97,6 +97,9 @@ class Demo extends Component {
             {/* You can match each of these user agents */}
             <UserAgent mobile>
               <h1>Hello from a mobile</h1>
+            </UserAgent>
+            <UserAgent tablet>
+              <h1>Hello from a tablet</h1>
             </UserAgent>
             <UserAgent android>
               <h1>Hello from android</h1>
