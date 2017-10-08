@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AndroidButton = () =>
+const AndroidButton = () => (
   <button
     style={{
       padding: '15px 20px',
@@ -18,5 +18,6 @@ const AndroidButton = () =>
   >
     Download in Google Play
   </button>
+)
 
 export default AndroidButton

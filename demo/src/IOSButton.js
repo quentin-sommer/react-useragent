@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IOSButton = () =>
+const IOSButton = () => (
   <button
     style={{
       padding: '15px 20px',
@@ -19,5 +19,6 @@ const IOSButton = () =>
   >
     Get in Apple Store
   </button>
+)
 
 export default IOSButton

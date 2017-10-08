@@ -15,7 +15,7 @@
     "clean": "nwb clean-module && nwb clean-demo",
     "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -m 'updated changelog' && git push origin master",
     "gh-pages-upload": "gh-pages --dist ./demo/dist",
-    "lint": "prettier --no-semi --single-quote --no-bracket-spacing --trailing-comma es5 './{src,tests, demo}/**/*.js' --write",
+    "lint": "prettier --no-semi --single-quote --no-bracket-spacing --trailing-comma es5 './{src,tests,demo/src}/**/*.js' --write",
     "publish-major": "npm run build && npm version major && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload",
     "publish-minor": "npm run build && npm version minor && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload ",
     "publish-patch": "npm run build && npm version patch && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload ",

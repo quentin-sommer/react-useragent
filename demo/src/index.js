@@ -53,8 +53,7 @@ class Demo extends Component {
           <div>
             <h1>react-useragent</h1>
             <p>
-              view the source code
-              {' '}
+              view the source code{' '}
               <a href="https://github.com/quentin-sommer/react-useragent/blob/master/demo/src/index.js">
                 here
               </a>
@@ -70,25 +69,20 @@ class Demo extends Component {
             </p>
             <UserAgent android>
               <div>
-                <p>
-                You seem to be on an android device...
-                </p>
+                <p>You seem to be on an android device...</p>
                 <AndroidButton />
               </div>
             </UserAgent>
             <UserAgent ios>
               <div>
-                <p>
-                You seem to be on an ios device...
-                </p>
+                <p>You seem to be on an ios device...</p>
                 <IOSButton />
               </div>
             </UserAgent>
             <UserAgent computer>
               <div>
                 <p>
-                  You seem to be on a computer, so here are all my buttons:
-                  {' '}
+                  You seem to be on a computer, so here are all my buttons:{' '}
                 </p>
                 <AndroidButton />
                 <IOSButton />
@@ -125,10 +119,10 @@ class Demo extends Component {
             </UserAgent>
             {/* Or if you want full control you can access the underlying parser */}
             <UserAgent returnfullParser>
-              {parser =>
+              {parser => (
                 <h1>
-                  I see you... {parser.getOS().name}
-                  {' '}{parser.getCPU().architecture}
+                  I see you... {parser.getOS().name}{' '}
+                  {parser.getCPU().architecture}
                   {/*
                   {console.log(parser)}
                   {console.log('getBrowser', parser.getBrowser())}
@@ -137,7 +131,8 @@ class Demo extends Component {
                   {console.log('getEngine', parser.getEngine())}
                   {console.log('getOS', parser.getOS())}
                   */}
-                </h1>}
+                </h1>
+              )}
             </UserAgent>
           </div>
         </UserAgentProvider>
