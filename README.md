@@ -59,6 +59,7 @@ Available props for `<UserAgent>`
 * linux
 * mac
 * mobile
+* tablet
 * android
 * ios 
 * firefox
