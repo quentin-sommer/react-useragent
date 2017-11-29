@@ -1,5 +1,8 @@
 # Change Log
 
+## [v1.2.4](https://github.com/quentin-sommer/react-useragent/tree/v1.2.4) (2017-11-29)
+[Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.2.3...v1.2.4)
+
 ## [v1.2.3](https://github.com/quentin-sommer/react-useragent/tree/v1.2.3) (2017-11-29)
 [Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.2.2...v1.2.3)
 
