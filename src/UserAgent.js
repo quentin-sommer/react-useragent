@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import availableProps from './availableProps'
 
 const UserAgent = ({children, returnfullParser, ...props}, {ua}) => {
-  const validProps = Object.keys(props).filter(prop =>
-    availableProps.includes(prop)
+  const validProps = Object.keys(props).filter(
+    prop => availableProps.indexOf(prop) !== -1
   )
   const ret = validProps.some(prop => ua.uaResults[prop])
   const funcChildren = typeof children === 'function'
