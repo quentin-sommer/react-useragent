@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/quentin-sommer/react-useragent.svg)](https://greenkeeper.io/)
 
-Integrate user-agent detection in an idiomatic React way
+Integrate user-agent detection in an idiomatic React way.
 
 ## Installation
 
@@ -10,7 +10,7 @@ Integrate user-agent detection in an idiomatic React way
 
 ## Introduction
 
-Imagine being able to render magnificent, deep links, beautiful download buttons for your app. Well, Now you can
+Imagine being able to render magnificent, deep links, beautiful download buttons for your app. Well, Now you can.
 
 ``` js
 <div>
@@ -24,7 +24,7 @@ Imagine being able to render magnificent, deep links, beautiful download buttons
 ```
 
 react-useragent wraps the great [UAParser.js](https://github.com/faisalman/ua-parser-js) library and make it easy to use useragent knowledge inside your React applications.
-react-useragent provides useful shortcuts but you can always use an escape hatch in case you want to access the underlying library
+react-useragent provides useful shortcuts but you can always use an escape hatch in case you want to access the underlying library.
 
 [live demo](https://quentin-sommer.github.io/react-useragent/)
 
@@ -34,7 +34,7 @@ First you need to wrap your App in a `<UserAgentProvider>` tag.
 You also need to pass a user agent string to `<UserAgentProvider>`. 
 On the browser that would be `window.navigator.userAgent`.
 
-react-useragent works in **server side rendering** as well, just pass it the request useragent string. On express that would be `req.headers['user-agent']`
+react-useragent works in **server side rendering** as well, just pass it the request useragent string. On express that would be `req.headers['user-agent']`.
 
 ``` js
 import {UserAgentProvider} from '@quentin-sommer/react-useragent'
@@ -52,7 +52,7 @@ const App = (props) => (
 Then use the `<UserAgent>` component.
 
 
-react-useragent expose some props, these are optimized and will be faster than directly accessing the `UAParser.js` library.
+react-useragent expose some props, these are optimized and using them will be faster than directly accessing the `UAParser.js` library.
 
 
 Available props for `<UserAgent>`
@@ -69,7 +69,7 @@ Available props for `<UserAgent>`
 * edge
 * safari
 
-Theses props are cumulable : `<UserAgent firefox mobile>` will match both firefox browser **and** mobile systems.
+Theses props are cumulable : `<UserAgent firefox mobile>` will match both firefox browser and mobile systems.
 
 ``` js
 import {UserAgentProvider, UserAgent} from '@quentin-sommer/react-useragent'
