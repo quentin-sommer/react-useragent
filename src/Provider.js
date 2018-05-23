@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import UAParser from 'ua-parser-js'
-import availableProps from './availableProps'
 
 const uaParser = new UAParser()
 
@@ -27,10 +26,7 @@ class UAProvider extends React.Component {
 
     uaResults.android = uaParser.getOS().name === 'Android'
     uaResults.ios = uaParser.getOS().name === 'iOS'
-    uaResults.mobile =
-      uaResults.android ||
-      uaResults.ios ||
-      uaParser.getDevice().type === 'mobile'
+    uaResults.mobile = uaParser.getDevice().type === 'mobile'
 
     uaResults.tablet = uaParser.getDevice().type === 'tablet'
 
