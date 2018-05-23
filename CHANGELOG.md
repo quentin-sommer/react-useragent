@@ -1,5 +1,17 @@
 # Change Log
 
+## [v1.3.0](https://github.com/quentin-sommer/react-useragent/tree/v1.3.0) (2018-05-23)
+[Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.2.5...v1.3.0)
+
+**Closed issues:**
+
+- Version 10 of node.js has been released [\#3](https://github.com/quentin-sommer/react-useragent/issues/3)
+- Error when testing with Page Speed Insight [\#1](https://github.com/quentin-sommer/react-useragent/issues/1)
+
+**Merged pull requests:**
+
+- Add Greenkeeper badge 🌴 [\#2](https://github.com/quentin-sommer/react-useragent/pull/2) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v1.2.5](https://github.com/quentin-sommer/react-useragent/tree/v1.2.5) (2018-01-28)
 [Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.2.4...v1.2.5)
 
