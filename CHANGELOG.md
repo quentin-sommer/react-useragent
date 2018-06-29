@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.3.1](https://github.com/quentin-sommer/react-useragent/tree/v1.3.1) (2018-06-29)
+[Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.3.0...v1.3.1)
+
+**Closed issues:**
+
+- negated props? [\#5](https://github.com/quentin-sommer/react-useragent/issues/5)
+
 ## [v1.3.0](https://github.com/quentin-sommer/react-useragent/tree/v1.3.0) (2018-05-23)
 [Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.2.5...v1.3.0)
 
