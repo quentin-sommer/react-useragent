@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.3.2](https://github.com/quentin-sommer/react-useragent/tree/v1.3.2) (2018-08-17)
+[Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.3.1...v1.3.2)
+
+**Closed issues:**
+
+- Consider renaming to UserAgentConsumer ? [\#7](https://github.com/quentin-sommer/react-useragent/issues/7)
+
+**Merged pull requests:**
+
+- chore\(package\): update nwb to version 0.23.0 [\#8](https://github.com/quentin-sommer/react-useragent/pull/8) ([quentin-sommer](https://github.com/quentin-sommer))
+
 ## [v1.3.1](https://github.com/quentin-sommer/react-useragent/tree/v1.3.1) (2018-06-29)
 [Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.3.0...v1.3.1)
 
