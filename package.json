@@ -33,7 +33,7 @@
   "devDependencies": {
     "gh-pages": "^1.0.0",
     "nwb": "^0.23.0",
-    "prettier": "^1.6.1",
+    "prettier": "^1.14.2",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
