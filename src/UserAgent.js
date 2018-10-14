@@ -2,10 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import availableProps from './availableProps'
 
-const UserAgent = (
-  {children, returnFullParser, ...props},
-  {ua}
-) => {
+const UserAgent = ({children, returnFullParser, ...props}, {ua}) => {
   const validProps = Object.keys(props).filter(
     prop => availableProps.indexOf(prop) !== -1
   )
