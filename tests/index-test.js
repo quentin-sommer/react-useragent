@@ -69,18 +69,4 @@ describe('UserAgent', () => {
       }
     )
   })
-
-  it('supports deprecated prop `returnfullParser`', () => {
-    render(
-      <UserAgentProvider ua={ms10UA}>
-        <UserAgent returnfullParser>
-          {parser => parser.getOS().name === 'Windows' && 'windows'}
-        </UserAgent>
-      </UserAgentProvider>,
-      node,
-      () => {
-        expect(node.innerHTML).toEqual('windows')
-      }
-    )
-  })
 })
