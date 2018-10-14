@@ -2,28 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import UAParser from 'ua-parser-js'
 
-const uaParser = new UAParser()
-
-const uaResults = {
-  android: false,
-  ios: false,
-  mobile: false,
-  tablet: false,
-  windows: false,
-  mac: false,
-  linux: false,
-  computer: false,
-  firefox: false,
-  chrome: false,
-  edge: false,
-  safari: false,
-}
-
 class UAProvider extends React.Component {
   constructor(props, context) {
     super(props, context)
-    uaParser.setUA(props.ua)
+    const uaParser = new UAParser()
+    const uaResults = {
+      android: false,
+      ios: false,
+      mobile: false,
+      tablet: false,
+      windows: false,
+      mac: false,
+      linux: false,
+      computer: false,
+      firefox: false,
+      chrome: false,
+      edge: false,
+      safari: false,
+    }
 
+    uaParser.setUA(props.ua)
     uaResults.android = uaParser.getOS().name === 'Android'
     uaResults.ios = uaParser.getOS().name === 'iOS'
     uaResults.mobile = uaParser.getDevice().type === 'mobile'
@@ -43,13 +41,16 @@ class UAProvider extends React.Component {
     uaResults.chrome = uaParser.getBrowser().name === 'Chrome'
     uaResults.edge = uaParser.getBrowser().name === 'Edge'
     uaResults.safari = uaParser.getBrowser().name === 'Safari'
+
+    this.uaParser = uaParser
+    this.uaResults = uaResults
   }
 
   getChildContext() {
     return {
       ua: {
-        parser: uaParser,
-        uaResults,
+        parser: this.uaParser,
+        uaResults: this.uaResults,
       },
     }
   }
