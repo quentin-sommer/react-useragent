@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import availableProps from './availableProps'
 
 const UserAgent = (
-  {children, returnFullParser, returnfullParser, ...props},
+  {children, returnFullParser, ...props},
   {ua}
 ) => {
   const validProps = Object.keys(props).filter(
@@ -22,16 +22,6 @@ const UserAgent = (
     return null
   }
   if (funcChildren) {
-    if (returnfullParser) {
-      if (process.env.NODE_ENV !== 'production') {
-        const str =
-          '@quentin-sommer/react-useragent: You are using the deprecated prop `returnfullParser`.' +
-          ' It will be removed in versions >=2.0.0.' +
-          ' Replace it by the new `returnFullParser` to remove this message'
-        console.warn(str)
-      }
-      return children(ua.parser)
-    }
     if (returnFullParser) {
       return children(ua.parser)
     }
@@ -53,13 +43,11 @@ if (process.env.NODE_ENV !== 'production') {
       {}
     ),
     returnFullParser: PropTypes.bool,
-    returnfullParser: PropTypes.bool,
   }
 }
 
 UserAgent.defaultProps = {
   returnFullParser: false,
-  returnfullParser: PropTypes.bool,
 }
 
 UserAgent.contextTypes = {
