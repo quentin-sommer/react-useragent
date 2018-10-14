@@ -118,7 +118,7 @@ class Demo extends Component {
               <h1>Hello from mobile or linux</h1>
             </UserAgent>
             {/* Or if you want full control you can access the underlying parser */}
-            <UserAgent returnfullParser>
+            <UserAgent returnFullParser>
               {parser => (
                 <h1>
                   I see you... {parser.getOS().name}{' '}

@@ -56,7 +56,21 @@ describe('UserAgent', () => {
     )
   })
 
-  it('returns full parser when `returnfullParser` prop is provided', () => {
+  it('returns full parser when `returnFullParser` prop is provided', () => {
+    render(
+      <UserAgentProvider ua={ms10UA}>
+        <UserAgent returnFullParser>
+          {parser => parser.getOS().name === 'Windows' && 'windows'}
+        </UserAgent>
+      </UserAgentProvider>,
+      node,
+      () => {
+        expect(node.innerHTML).toEqual('windows')
+      }
+    )
+  })
+
+  it('supports deprecated prop `returnfullParser`', () => {
     render(
       <UserAgentProvider ua={ms10UA}>
         <UserAgent returnfullParser>

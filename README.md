@@ -97,7 +97,7 @@ You can also use this alternative API if you find it more convenient
 
 For full power you can always access the underlying parser with the `returnFullParser` prop
 ``` js
-<UserAgent returnfullParser>
+<UserAgent returnFullParser>
     {parser => (
       <p>I see you, {parser.getOS().name} {parser.getCPU().architecture}</p>
     )}
