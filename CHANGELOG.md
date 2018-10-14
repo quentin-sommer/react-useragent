@@ -1,5 +1,18 @@
 # Change Log
 
+## [v1.4.0](https://github.com/quentin-sommer/react-useragent/tree/v1.4.0) (2018-10-14)
+[Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.3.2...v1.4.0)
+
+**Closed issues:**
+
+- next.js example [\#10](https://github.com/quentin-sommer/react-useragent/issues/10)
+
+**Merged pull requests:**
+
+- Added correct returnFullParser prop kept support for deprecated returnfullParser [\#12](https://github.com/quentin-sommer/react-useragent/pull/12) ([quentin-sommer](https://github.com/quentin-sommer))
+- Added basic tests [\#11](https://github.com/quentin-sommer/react-useragent/pull/11) ([quentin-sommer](https://github.com/quentin-sommer))
+- Update gh-pages to the latest version 🚀 [\#9](https://github.com/quentin-sommer/react-useragent/pull/9) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v1.3.2](https://github.com/quentin-sommer/react-useragent/tree/v1.3.2) (2018-08-17)
 [Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.3.1...v1.3.2)
 
