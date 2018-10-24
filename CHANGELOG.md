@@ -1,5 +1,12 @@
 # Change Log
 
+## [v2.0.0](https://github.com/quentin-sommer/react-useragent/tree/v2.0.0) (2018-10-14)
+[Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.4.0...v2.0.0)
+
+**Merged pull requests:**
+
+- Removed deprecated prop returnfullParser [\#13](https://github.com/quentin-sommer/react-useragent/pull/13) ([quentin-sommer](https://github.com/quentin-sommer))
+
 ## [v1.4.0](https://github.com/quentin-sommer/react-useragent/tree/v1.4.0) (2018-10-14)
 [Full Changelog](https://github.com/quentin-sommer/react-useragent/compare/v1.3.2...v1.4.0)
 
