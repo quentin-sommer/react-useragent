@@ -59,7 +59,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 UserAgent.defaultProps = {
   returnFullParser: false,
-  returnfullParser: PropTypes.bool,
+  returnfullParser: false,
 }
 
 UserAgent.contextTypes = {
