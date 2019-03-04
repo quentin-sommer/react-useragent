@@ -18,7 +18,7 @@ Imagine being able to render magnificent, deep links, beautiful download buttons
     <BeautifulIOSButton/>
   </UserAgent>
   <UserAgent windows>
-    <BeautifulIWindowsButton/>
+    <BeautifulWindowsButton/>
   </UserAgent>
 </div>
 ```
