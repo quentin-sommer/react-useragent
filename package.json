@@ -10,6 +10,9 @@
     "lib",
     "umd"
   ],
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "build": "npm run clean && npm run lint && nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
