@@ -2,44 +2,65 @@
   "name": "@quentin-sommer/react-useragent",
   "version": "2.0.0",
   "description": "react-useragent React component",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "dist/index.js",
+  "module": "dist/react-useragent.esm.js",
+  "typings": "dist/index.d.ts",
   "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
+    "dist"
   ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "build-demo": "cd example && npm run build && cd -",
+    "test": "tsdx test --env=jsdom",
+    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -m 'updated changelog' && git push origin master",
+    "gh-pages-upload": "gh-pages --dist ./example/dist",
+    "lint": "prettier --no-semi --single-quote --no-bracket-spacing --trailing-comma es5 './{src,tests,demo/src}/**/*.js' --write",
+    "publish-major": "npm run test && npm run build && npm run build-demo && npm version major && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload",
+    "publish-minor": "npm run test && npm run build && npm run build-demo && npm version minor && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload ",
+    "publish-patch": "npm run test && npm run build && npm run build-demo && npm version patch && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload "
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": false
+  },
   "engines": {
     "node": ">=8"
   },
-  "scripts": {
-    "build": "npm run clean && npm run lint && nwb build-react-component",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -m 'updated changelog' && git push origin master",
-    "gh-pages-upload": "gh-pages --dist ./demo/dist",
-    "lint": "prettier --no-semi --single-quote --no-bracket-spacing --trailing-comma es5 './{src,tests,demo/src}/**/*.js' --write",
-    "publish-major": "npm run build && npm version major && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload",
-    "publish-minor": "npm run build && npm version minor && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload ",
-    "publish-patch": "npm run build && npm version patch && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload ",
-    "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
-  },
-  "dependencies": {
-    "ua-parser-js": "^0.7.13"
-  },
-  "peerDependencies": {
-    "react": "15.x || ^16.0.0"
+  "jest": {
+    "globals": {
+      "__DEV__": true
+    }
   },
   "devDependencies": {
-    "gh-pages": "^2.0.0",
-    "nwb": "^0.23.0",
-    "prettier": "^1.14.2",
+    "@types/jest": "^24.0.15",
+    "@types/react": "^16.8.22",
+    "@types/react-dom": "^16.8.4",
+    "@types/ua-parser-js": "^0.7.33",
+    "gh-pages": "^2.0.1",
+    "husky": "^2.4.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
     "prop-types": "^15.7.2",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "tsdx": "^0.7.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "ua-parser-js": "^0.7.20"
   },
   "author": {
     "name": "Quentin Sommer",

@@ -1,12 +1,12 @@
-import expect from 'expect'
 import React from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
-import {UserAgent, UserAgentProvider} from 'src/'
+import {UserAgent, UserAgentProvider} from '../src'
+import {UAParser} from 'ua-parser-js'
 
 describe('UserAgent', () => {
   const ms10UA =
     'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0'
-  let node
+  let node: HTMLElement
 
   beforeEach(() => {
     node = document.createElement('div')
@@ -47,7 +47,9 @@ describe('UserAgent', () => {
   it('supports func child and pass it the result', () => {
     render(
       <UserAgentProvider ua={ms10UA}>
-        <UserAgent mobile>{isMobile => isMobile && 'mobile'}</UserAgent>
+        <UserAgent mobile>
+          {(isMobile: boolean) => isMobile && 'mobile'}
+        </UserAgent>
       </UserAgentProvider>,
       node,
       () => {
@@ -60,7 +62,7 @@ describe('UserAgent', () => {
     render(
       <UserAgentProvider ua={ms10UA}>
         <UserAgent returnFullParser>
-          {parser => parser.getOS().name === 'Windows' && 'windows'}
+          {(parser: UAParser) => parser.getOS().name === 'Windows' && 'windows'}
         </UserAgent>
       </UserAgentProvider>,
       node,

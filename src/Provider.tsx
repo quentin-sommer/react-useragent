@@ -1,9 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import UAParser from 'ua-parser-js'
+import {UAParser} from 'ua-parser-js'
 
-class UAProvider extends React.Component {
-  constructor(props, context) {
+type UAResults = {
+  android: boolean
+  ios: boolean
+  mobile: boolean
+  tablet: boolean
+  windows: boolean
+  mac: boolean
+  linux: boolean
+  computer: boolean
+  firefox: boolean
+  chrome: boolean
+  edge: boolean
+  safari: boolean
+}
+
+type Props = {
+  ua: string
+}
+
+class UAProvider extends React.Component<Props> {
+  uaParser: UAParser
+  uaResults: UAResults
+
+  static propTypes = {
+    ua: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired,
+  }
+
+  static childContextTypes = {
+    ua: PropTypes.object.isRequired,
+  }
+
+  constructor(props: Props, context: any) {
     super(props, context)
     const uaParser = new UAParser()
     const uaResults = {
@@ -58,17 +89,6 @@ class UAProvider extends React.Component {
   render() {
     return React.Children.only(this.props.children)
   }
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  UAProvider.propTypes = {
-    ua: PropTypes.string.isRequired,
-    children: PropTypes.element.isRequired,
-  }
-}
-
-UAProvider.childContextTypes = {
-  ua: PropTypes.object.isRequired,
 }
 
 export default UAProvider
