@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import availableProps from './availableProps'
 import * as React from 'react'
+import {UAContext} from './Provider'
 
 export type UserAgentProps = {
   computer?: boolean
@@ -22,56 +23,52 @@ type Props = {
   children?: any
 } & UserAgentProps
 
-const UserAgent: React.FunctionComponent<Props> = (
-  {children, returnFullParser, ...props},
-  {ua}
-) => {
-  const validProps = Object.keys(props).filter(
-    prop => availableProps.indexOf(prop) !== -1
-  )
-  const ret = validProps.some(prop => ua.uaResults[prop])
-  const funcChildren = typeof children === 'function'
-
-  if (validProps.length !== 0) {
-    if (funcChildren) {
-      return children(ret)
-    }
-    if (ret) {
-      return children
-    }
-    return null
+class UserAgent extends React.Component<Props> {
+  static contextType = UAContext
+  static defaultProps = {
+    returnFullParser: false,
   }
-  if (funcChildren) {
-    if (returnFullParser) {
-      return children(ua.parser)
-    }
-    return children(ua.uaResults)
-  }
-
-  if (__DEV__) {
-    throw new Error(
-      'UserAgent should be used with a function as a child when used without any props'
-    )
-  }
-  return null
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  UserAgent.propTypes = {
+  static propTypes = {
     ...availableProps.reduce(
       (acc, cur) => ({...acc, [cur]: PropTypes.bool}),
       {}
     ),
     returnFullParser: PropTypes.bool,
   }
-}
 
-UserAgent.defaultProps = {
-  returnFullParser: false,
-}
+  render(): React.ReactNode {
+    const {children, returnFullParser} = this.props
+    const ua = this.context
 
-UserAgent.contextTypes = {
-  ua: PropTypes.object,
+    const validProps = Object.keys(this.props).filter(
+      prop => availableProps.indexOf(prop) !== -1
+    )
+    const ret = validProps.some(prop => ua.uaResults[prop])
+    const funcChildren = typeof children === 'function'
+
+    if (validProps.length !== 0) {
+      if (funcChildren) {
+        return children(ret)
+      }
+      if (ret) {
+        return children
+      }
+      return null
+    }
+    if (funcChildren) {
+      if (returnFullParser) {
+        return children(ua.parser)
+      }
+      return children(ua.uaResults)
+    }
+
+    if (__DEV__) {
+      throw new Error(
+        'UserAgent should be used with a function as a child when used without any props'
+      )
+    }
+    return null
+  }
 }
 
 export default UserAgent

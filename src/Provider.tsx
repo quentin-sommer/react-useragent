@@ -21,6 +21,8 @@ type Props = {
   ua: string
 }
 
+export const UAContext = React.createContext({uaResults: {}, parser: {}})
+
 class UAProvider extends React.Component<Props> {
   uaParser: UAParser
   uaResults: UAResults
@@ -30,12 +32,8 @@ class UAProvider extends React.Component<Props> {
     children: PropTypes.element.isRequired,
   }
 
-  static childContextTypes = {
-    ua: PropTypes.object.isRequired,
-  }
-
-  constructor(props: Props, context: any) {
-    super(props, context)
+  constructor(props: Props) {
+    super(props)
     const uaParser = new UAParser()
     const uaResults = {
       android: false,
@@ -77,17 +75,15 @@ class UAProvider extends React.Component<Props> {
     this.uaResults = uaResults
   }
 
-  getChildContext() {
-    return {
-      ua: {
-        parser: this.uaParser,
-        uaResults: this.uaResults,
-      },
-    }
-  }
-
   render() {
-    return React.Children.only(this.props.children)
+    return (
+      <UAContext.Provider
+        value={{parser: this.uaParser, uaResults: this.uaResults}}
+      >
+        {this.props.children}
+      </UAContext.Provider>
+    )
+    // return React.Children.only(this.props.children)
   }
 }
 

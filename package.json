@@ -15,7 +15,7 @@
     "test": "tsdx test --env=jsdom",
     "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -m 'updated changelog' && git push origin master",
     "gh-pages-upload": "gh-pages --dist ./example/dist",
-    "lint": "prettier --no-semi --single-quote --no-bracket-spacing --trailing-comma es5 './{src,tests,demo/src}/**/*.js' --write",
+    "lint": "prettier './{src,test,example}/**/*{.ts,.tsx}' --write",
     "publish-major": "npm run test && npm run build && npm run build-demo && npm version major && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload",
     "publish-minor": "npm run test && npm run build && npm run build-demo && npm version minor && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload ",
     "publish-patch": "npm run test && npm run build && npm run build-demo && npm version patch && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload "
