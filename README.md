@@ -8,6 +8,17 @@ Integrate user-agent detection in an idiomatic React way.
 
 `yarn add @quentin-sommer/react-useragent` or `npm i -s @quentin-sommer/react-useragent`
 
+For React 15 (old context) use the `2.x` version 
+
+```
+// React 15
+"dependencies": {
+  ...
+  "@quentin-sommer/react-useragent": "^2.0.0"
+  ...
+}
+```
+
 ## Introduction
 
 Imagine being able to render magnificent, deep links, beautiful download buttons for your app. Well, Now you can.
