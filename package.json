@@ -21,7 +21,7 @@
     "publish-patch": "npm run test && npm run build && npm run build-demo && npm version patch && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload "
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": "^16"
   },
   "husky": {
     "hooks": {
@@ -49,7 +49,7 @@
     "@types/react-dom": "^16.8.4",
     "@types/ua-parser-js": "^0.7.33",
     "gh-pages": "^2.0.1",
-    "husky": "^2.4.1",
+    "husky": "^2.7.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "prop-types": "^15.7.2",
