@@ -1,7 +1,5 @@
 # react-useragent
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/quentin-sommer/react-useragent.svg)](https://greenkeeper.io/)
-
 Integrate user-agent detection in an idiomatic React way.
 
 ## Installation
