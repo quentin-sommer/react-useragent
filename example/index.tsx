@@ -2,10 +2,11 @@ import 'react-app-polyfill/ie11'
 import * as React from 'react'
 import {render} from 'react-dom'
 
-import {UserAgentProvider, UserAgent} from '../src'
+import {UserAgentProvider, UserAgent, UAContext} from '../src'
 import AndroidButton from './AndroidButton'
 import IOSButton from './IOSButton'
 import GitHubCorner from './GitHubCorner'
+import UsingContextHook from './UsingContextHook'
 
 class Demo extends React.Component {
   render() {
@@ -17,7 +18,7 @@ class Demo extends React.Component {
             <h1>react-useragent</h1>
             <p>
               view the source code{' '}
-              <a href="https://github.com/quentin-sommer/react-useragent/blob/master/demo/src/index.js">
+              <a href="https://github.com/quentin-sommer/react-useragent/blob/master/example/index.tsx">
                 here
               </a>
             </p>
@@ -87,16 +88,18 @@ class Demo extends React.Component {
                   I see you... {parser.getOS().name}{' '}
                   {parser.getCPU().architecture}
                   {/*
-                  {console.log(parser)}
-                  {console.log('getBrowser', parser.getBrowser())}
-                  {console.log('getCPU', parser.getCPU())}
-                  {console.log('getDevice', parser.getDevice())}
-                  {console.log('getEngine', parser.getEngine())}
-                  {console.log('getOS', parser.getOS())}
-                  */}
+                {console.log(parser)}
+                {console.log('getBrowser', parser.getBrowser())}
+                {console.log('getCPU', parser.getCPU())}
+                {console.log('getDevice', parser.getDevice())}
+                {console.log('getEngine', parser.getEngine())}
+                {console.log('getOS', parser.getOS())}
+                */}
                 </h1>
               )}
             </UserAgent>
+            {/* Or if you want to use it with useContext */}
+            <UsingContextHook />
           </div>
         </UserAgentProvider>
       </div>

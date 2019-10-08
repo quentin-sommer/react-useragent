@@ -21,7 +21,15 @@ type Props = {
   ua: string
 }
 
-export const UAContext = React.createContext({uaResults: {}, parser: {}})
+type ContextProps = {
+  parser: UAParser | {}
+  uaResults: UAResults | {}
+}
+
+export const UAContext = React.createContext<ContextProps>({
+  uaResults: {},
+  parser: {},
+})
 
 class UAProvider extends React.Component<Props> {
   uaParser: UAParser
