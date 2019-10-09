@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
-import {UserAgent, UserAgentProvider} from '../src'
+import {UserAgent, UserAgentProvider, UAContext} from '../src'
 import {UAParser} from 'ua-parser-js'
 
 describe('UserAgent', () => {
@@ -68,6 +68,42 @@ describe('UserAgent', () => {
       node,
       () => {
         expect(node.innerHTML).toEqual('windows')
+      }
+    )
+  })
+
+  it('Exposes UAContext to be used with useContext', () => {
+    const WithUseContext = () => {
+      const {parser} = useContext(UAContext)
+      // @ts-ignore
+      return parser.getOS().name
+    }
+    render(
+      <UserAgentProvider ua={ms10UA}>
+        <WithUseContext />
+      </UserAgentProvider>,
+      node,
+      () => {
+        expect(node.innerHTML).toEqual('Windows')
+      }
+    )
+  })
+
+  it('Exposes UAContext to be used with class contextType', () => {
+    class WithContextType extends React.Component {
+      static contextType = UAContext
+      render() {
+        // @ts-ignore
+        return this.context.parser.getOS().name
+      }
+    }
+    render(
+      <UserAgentProvider ua={ms10UA}>
+        <WithContextType />
+      </UserAgentProvider>,
+      node,
+      () => {
+        expect(node.innerHTML).toEqual('Windows')
       }
     )
   })

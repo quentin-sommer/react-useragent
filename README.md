@@ -6,7 +6,7 @@ Integrate user-agent detection in an idiomatic React way.
 
 `yarn add @quentin-sommer/react-useragent` or `npm i -s @quentin-sommer/react-useragent`
 
-For React 15 (old context) use the `2.x` version 
+For React 15 (old context) use the `2.x` version
 
 ```
 // React 15
@@ -21,13 +21,13 @@ For React 15 (old context) use the `2.x` version
 
 Imagine being able to render magnificent, deep links, beautiful download buttons for your app. Well, Now you can.
 
-``` js
+```js
 <div>
   <UserAgent ios>
-    <BeautifulIOSButton/>
+    <BeautifulIOSButton />
   </UserAgent>
   <UserAgent windows>
-    <BeautifulWindowsButton/>
+    <BeautifulWindowsButton />
   </UserAgent>
 </div>
 ```
@@ -40,62 +40,59 @@ react-useragent provides useful shortcuts but you can always use an escape hatch
 ## Usage
 
 First you need to wrap your App in a `<UserAgentProvider>` tag.
-You also need to pass a user agent string to `<UserAgentProvider>`. 
+You also need to pass a user agent string to `<UserAgentProvider>`.
 On the browser that would be `window.navigator.userAgent`.
 
 react-useragent works in **server side rendering** as well, just pass it the request useragent string. On express that would be `req.headers['user-agent']`.
 
-``` js
+```js
 import {UserAgentProvider} from '@quentin-sommer/react-useragent'
 
-const App = (props) => (
-    <UserAgentProvider ua={window.navigator.userAgent}>
-        <div>
-        {/* rest of your App */}
-        </div>
-    </UserAgentProvider>
+const App = props => (
+  <UserAgentProvider ua={window.navigator.userAgent}>
+    <div>{/* rest of your App */}</div>
+  </UserAgentProvider>
 )
-
 ```
 
 Then use the `<UserAgent>` component.
 
-
 react-useragent expose some props, these are optimized and using them will be faster than directly accessing the `UAParser.js` library.
 
-
 Available props for `<UserAgent>`
-* computer
-* windows
-* linux
-* mac
-* mobile
-* tablet
-* android
-* ios 
-* firefox
-* chrome
-* edge
-* safari
+
+- computer
+- windows
+- linux
+- mac
+- mobile
+- tablet
+- android
+- ios
+- firefox
+- chrome
+- edge
+- safari
 
 Theses props are cumulable : `<UserAgent firefox mobile>` will match both firefox browser and mobile systems.
 
-``` js
+```js
 import {UserAgentProvider, UserAgent} from '@quentin-sommer/react-useragent'
 
-const App = (props) => (
-    <UserAgentProvider ua={window.navigator.userAgent}>
-        <div>
-          <UserAgent mobile>
-            <p>This will only be rendered on mobile</p>
-          </UserAgent>
-        </div>
-    </UserAgentProvider>
+const App = props => (
+  <UserAgentProvider ua={window.navigator.userAgent}>
+    <div>
+      <UserAgent mobile>
+        <p>This will only be rendered on mobile</p>
+      </UserAgent>
+    </div>
+  </UserAgentProvider>
 )
 ```
 
 You can also use this alternative API if you find it more convenient
-``` js
+
+```js
 <UserAgent mobile>
     {uaIsMobile => (
         {uaIsMobile && <p>This will ONLY be rendered on mobile</p>}
@@ -105,14 +102,27 @@ You can also use this alternative API if you find it more convenient
 ```
 
 For full power you can always access the underlying parser with the `returnFullParser` prop
-``` js
+
+```js
 <UserAgent returnFullParser>
-    {parser => (
-      <p>I see you, {parser.getOS().name} {parser.getCPU().architecture}</p>
-    )}
+  {parser => (
+    <p>
+      I see you, {parser.getOS().name} {parser.getCPU().architecture}
+    </p>
+  )}
 </UserAgent>
 ```
 
-For more example see the demo app source [here](https://github.com/quentin-sommer/react-useragent/blob/master/demo/src/index.js)
+You can also use the library with the `useContext` hook
+
+```js
+import {UAContext} from '@quentin-sommer/react-useragent'
+const UsingContextHook = () => {
+  const {uaResults, parser} = useContext(UAContext)
+  return parser.getOS().name
+}
+```
+
+For more example see the demo app source [here](https://github.com/quentin-sommer/react-useragent/blob/master/example/index.tsx)
 
 If you have any questions don't hesitate to say hi on [Twitter](https://twitter.com/quentin_smr)
