@@ -39,6 +39,11 @@ react-useragent provides useful shortcuts but you can always use an escape hatch
 
 ## Usage
 
+### Next.js example
+
+The most common question about this library is how to use it with Next.js. An [example](https://github.com/zeit/next.js/tree/canary/examples/with-react-useragent) is available in Next.js repository. 
+
+### Generic usage
 First you need to wrap your App in a `<UserAgentProvider>` tag.
 You also need to pass a user agent string to `<UserAgentProvider>`.
 On the browser that would be `window.navigator.userAgent`.
