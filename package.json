@@ -50,7 +50,7 @@
     "@types/ua-parser-js": "^0.7.33",
     "gh-pages": "^2.0.1",
     "husky": "^4.0.0",
-    "prettier": "^1.18.2",
+    "prettier": "^2.0.1",
     "pretty-quick": "^2.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
