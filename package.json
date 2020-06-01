@@ -48,7 +48,7 @@
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "@types/ua-parser-js": "^0.7.33",
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^3.0.0",
     "husky": "^4.0.0",
     "prettier": "^2.0.1",
     "pretty-quick": "^2.0.0",
