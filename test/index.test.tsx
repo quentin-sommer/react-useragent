@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
 import {UserAgent, UserAgentProvider, UAContext} from '../src'
-import {UAParser} from 'ua-parser-js'
+import UAParser from 'ua-parser-js'
 
 describe('UserAgent', () => {
   const ms10UA =
