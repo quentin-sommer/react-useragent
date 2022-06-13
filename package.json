@@ -21,7 +21,7 @@
     "publish-patch": "npm run test && npm run build && npm run build-demo && npm version patch && npm publish --access public && git push --tags && sleep 5 && npm run changelog && npm run gh-pages-upload "
   },
   "peerDependencies": {
-    "react": "^17 || ^16"
+    "react": ">=16"
   },
   "husky": {
     "hooks": {
